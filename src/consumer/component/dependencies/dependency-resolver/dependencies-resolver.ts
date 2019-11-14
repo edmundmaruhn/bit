@@ -1127,12 +1127,12 @@ either, use the ignore file syntax or change the require statement to have a mod
   }
   _pushToMissingDependenciesOnFs(originFile: PathLinuxRelative, missingFiles: string[]) {
     if (this.issues.missingDependenciesOnFs[originFile]) {
-      this.issues.missingDependenciesOnFs[originFile].concat(missingFiles);
+      this.issues.missingDependenciesOnFs[originFile].push(...missingFiles);
     } else this.issues.missingDependenciesOnFs[originFile] = missingFiles;
   }
   _pushToMissingPackagesDependenciesIssues(originFile: PathLinuxRelative, missingPackages: string[]) {
     if (this.issues.missingPackagesDependenciesOnFs[originFile]) {
-      this.issues.missingPackagesDependenciesOnFs[originFile].concat(missingPackages);
+      this.issues.missingPackagesDependenciesOnFs[originFile].push(...missingPackages);
     } else this.issues.missingPackagesDependenciesOnFs[originFile] = missingPackages;
   }
   _pushToMissingCustomModuleIssues(originFile: PathLinuxRelative, componentId: BitId) {
